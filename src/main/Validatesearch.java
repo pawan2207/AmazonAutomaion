@@ -3,6 +3,7 @@ package main;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -18,7 +19,7 @@ public class Validatesearch {
         String actual = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']/span[3]")).getText();
         String result = (actual.contains(search_product)) ? "Test case pass" : "Test case fail";
         System.out.println(result);
-        driver.close();
+
     }
 
 

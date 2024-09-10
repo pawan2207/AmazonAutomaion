@@ -1,0 +1,57 @@
+ * 1. **Login Test**: - **Steps**: Open Amazon.in, click on the sign-in button,
+ * enter valid credentials, and verify successful login. - **Expected Result**:
+ * User should be redirected to the homepage with their account name displayed. Completed
+ *
+ * 2. **Search Functionality**: - **Steps**: Enter a product name in the search
+ * bar, click the search button, and verify that the search results are
+ * displayed. - **Expected Result**: Relevant products should be listed based on
+ * the search query. Completed
+ *
+ * 3. **Add to Cart**: - **Steps**: Search for a product, select a product from
+ * the search results, click on "Add to Cart," and verify that the product is
+ * added to the cart. - **Expected Result**: The product should be added to the
+ * cart, and the cart count should be updated.
+ *
+ * 4. **Remove from Cart**: - **Steps**: Add a product to the cart, go to the
+ * cart, remove the product, and verify that the cart is empty. - **Expected
+ * Result**: The cart should be empty, and the cart count should be zero.
+ *
+ * 5. **Place an Order**: - **Steps**: Add a product to the cart, proceed to
+ * checkout, enter shipping details, select a payment method, and place the
+ * order. - **Expected Result**: The order should be placed successfully, and an
+ * order confirmation message should be displayed.
+ *
+ * 6. **Filter Products**: - **Steps**: Search for a product, apply filters
+ * (e.g., price range, brand), and verify that the filtered results are
+ * displayed. - **Expected Result**: Only products matching the filter criteria
+ * should be displayed.
+ *
+ * 7. **Product Details Verification**: - **Steps**: Search for a product, click
+ * on a product to view its details, and verify the product information (e.g.,
+ * title, price, description). - **Expected Result**: The product details should
+ * match the expected information.
+ *
+ * 8. **User Registration**: - **Steps**: Navigate to the registration page,
+ * fill in the required details, submit the form, and verify successful
+ * registration. - **Expected Result**: The user should be registered
+ * successfully, and a confirmation message should be displayed.
+ *
+ * These test cases cover a range of functionalities on Amazon.in and will help
+ * you get hands-on experience with Selenium. If you need any specific code
+ * examples or further assistance, feel free to ask!
+ *
+ * Source: Conversation with Copilot, 4/9/2024 (1) How to Automate Amazon Like
+ * E-Commerce Website with Selenium?.
+ * https://www.geeksforgeeks.org/how-to-automate-amazon-like-e-commerce-website-
+ * with-selenium/. (2) How to Automate Amazon Website with Selenium - YouTube.
+ * https://www.youtube.com/watch?v=pwltP0hYb1w. (3) Test Automation using
+ * Selenium/Java/TestNG/Maven for Amazon.in.
+ * https://github.com/monaliwaykar/Amazon_Automation_Test_Selenium. (4)
+ * Bad-ri/Selenium-Amazon-Testing - GitHub.
+ * https://github.com/Bad-ri/Selenium-Amazon-Testing. (5) Automated test scripts
+ * for Amazon e-commerce web app using Java ....
+ * https://github.com/Aditya9769/amazon-automation. (6) undefined.
+ * https://www.amazon.in/a/addresses/add?ref=ya_address_book_add_post. (7)
+ * undefined. https://www.amazon.in/a/addresses. (8) undefined.
+ * https://youtu.be/iAuwzB86IJcThanks.
+ */
