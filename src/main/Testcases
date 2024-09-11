@@ -10,7 +10,7 @@
  * 3. **Add to Cart**: - **Steps**: Search for a product, select a product from
  * the search results, click on "Add to Cart," and verify that the product is
  * added to the cart. - **Expected Result**: The product should be added to the
- * cart, and the cart count should be updated.
+ * cart, and the cart count should be updated. completed
  *
  * 4. **Remove from Cart**: - **Steps**: Add a product to the cart, go to the
  * cart, remove the product, and verify that the cart is empty. - **Expected
