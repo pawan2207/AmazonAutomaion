@@ -1,6 +1,5 @@
 package main;
 
-import com.google.errorprone.annotations.Var;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -26,8 +25,15 @@ public class addToCart {
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//button[text()='Add to cart']")).click();
 
-        //Match selected product is available in cart or not.
+        //check if item is added in card
         Thread.sleep(5000);
+        int count = Integer.parseInt(driver.findElement(By.xpath("//div[@id='nav-cart-count-container']/span[@id='nav-cart-count']")).getText());
+        System.out.println(count);
+        String cart_item_count = (count > 0) ? "Yes added successfully" : "No item is not added in cart";
+        System.out.println(cart_item_count);
+
+        //Match selected product is available in cart or not.
+
         driver.findElement(By.id("nav-cart-count-container")).click();
         String Cart_Pname = driver.findElement(By.className("a-truncate-cut")).getText();
 
@@ -38,7 +44,7 @@ public class addToCart {
         } else {
             System.out.println("Item not found");
         }
-driver.quit();
+        driver.quit();
     }
 }
 
