@@ -15,6 +15,7 @@ public class Applyfilter {
 
     public static void main(String[] args) throws InterruptedException {
         // Initialize WebDriver
+        System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\msedgedriver.exe");
         WebDriver driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
@@ -48,6 +49,12 @@ public class Applyfilter {
                     System.out.println("Could not find or select the checkbox for " + brand + ": " + e.getMessage());
                 }
             }
+            //get all product names after filter
+
+
+
+
+
         } finally {
             // Close the browser
 

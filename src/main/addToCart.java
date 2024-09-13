@@ -12,6 +12,7 @@ public class addToCart {
 
         //Name of product going to search
         String search_product = "mi mobile";
+        System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\msedgedriver.exe");
         WebDriver driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
