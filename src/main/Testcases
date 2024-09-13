@@ -14,7 +14,7 @@
  *
  * 4. **Remove from Cart**: - **Steps**: Add a product to the cart, go to the
  * cart, remove the product, and verify that the cart is empty. - **Expected
- * Result**: The cart should be empty, and the cart count should be zero.
+ * Result**: The cart should be empty, and the cart count should be zero. Completed
  *
  * 5. **Place an Order**: - **Steps**: Add a product to the cart, proceed to
  * checkout, enter shipping details, select a payment method, and place the

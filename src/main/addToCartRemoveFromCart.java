@@ -38,11 +38,16 @@ public class addToCartRemoveFromCart {
 
         //Verify cart is empty
 
-       Thread.sleep(1000);
+        Thread.sleep(1000);
 
         String Actual_message = driver.findElement(By.xpath("//h2")).getText();
         System.out.println(Actual_message);
         System.out.println((Actual_message.contains("Your Amazon Cart is empty.")) ? "Yes item is removed" : "No, item is not removed");
+
+        //verify cart is empty
+
+        int updated_cart_count = Integer.parseInt(driver.findElement(By.xpath("//*[@id='nav-cart-count']")).getText());
+        String new_cart_count = (updated_cart_count == 0) ? "Cart is empty" : "Cart is not empty";
 
 
     }
