@@ -5,15 +5,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
 
 import java.time.Duration;
 import java.util.List;
 
 public class Applyfilter {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         // Initialize WebDriver
         System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\msedgedriver.exe");
         WebDriver driver = new EdgeDriver();
@@ -21,27 +19,21 @@ public class Applyfilter {
 
         // Open URL and search for product
         String searchProduct = "android mobile";
-
         driver.get("https://amazon.in");
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys(searchProduct);
         driver.findElement(By.id("nav-search-submit-button")).click();
 
-
         try {
-            // Wait for the page to load
-            driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(20));
-
             // Define the brands you want to select
             String[] brandsToSelect = {"POCO"}; // Example brands
 
             for (String brand : brandsToSelect) {
                 try {
-                    // Locate the checkbox element for the given brand
+                    // Locate and select the brand checkbox using XPath
                     String checkboxXPath = String.format("//li[@aria-label='%s']//input[@type='checkbox']", brand);
-                    System.out.println(checkboxXPath);
                     List<WebElement> checkboxes = driver.findElements(By.xpath(checkboxXPath));
 
-                    // Click the checkbox if it is not already selected
+                    // Click the checkbox if it exists
                     for (WebElement checkbox : checkboxes) {
                         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkbox);
                     }
@@ -49,30 +41,27 @@ public class Applyfilter {
                     System.out.println("Could not find or select the checkbox for " + brand + ": " + e.getMessage());
                 }
             }
-            //get all product names after filter
-            List<WebElement> filtered_products = driver.findElements(By.xpath("//h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']/a/span"));
-            System.out.println(filtered_products.size());
-            for (int i = 0; i <= filtered_products.size() - 1; i++) {
-                String actual_product_name = (filtered_products.get(i).getText());
-                for (String filter_criteria : brandsToSelect) {
-                    String result = (actual_product_name.contains(filter_criteria)) ? String.format("Correct product is %s pass", actual_product_name ): "fail";
-                    System.out.println(result);
+
+            // Get all product names after filtering
+            List<WebElement> filteredProducts = driver.findElements(By.xpath("//h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']/a/span"));
+            System.out.println("Filtered products count: " + filteredProducts.size());
+
+            // Validate each product's name against the selected brands
+            for (WebElement product : filteredProducts) {
+                String productName = product.getText();
+
+                // Check if the product name contains any selected brand
+                for (String brand : brandsToSelect) {
+                    if (productName.contains(brand)) {
+                        System.out.println(String.format("Product: %s | Brand: %s | Status: Pass", productName, brand));
+                    } else {
+                        System.out.println(String.format("Product: %s | Brand: %s | Status: Fail", productName, brand));
+                    }
                 }
-
             }
-
-
         } finally {
             // Close the browser
-
+            driver.quit();
         }
     }
 }
-
-
-
-
-
-
-
-
