@@ -28,7 +28,7 @@ public class Applyfilter {
 
 
         try {
-                      // Wait for the page to load
+            // Wait for the page to load
             driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(20));
 
             // Define the brands you want to select
@@ -50,9 +50,16 @@ public class Applyfilter {
                 }
             }
             //get all product names after filter
+            List<WebElement> filtered_products = driver.findElements(By.xpath("//h2[@class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']/a/span"));
+            System.out.println(filtered_products.size());
+            for (int i = 0; i <= filtered_products.size() - 1; i++) {
+                String actual_product_name = (filtered_products.get(i).getText());
+                for (String filter_criteria : brandsToSelect) {
+                    String result = (actual_product_name.contains(filter_criteria)) ? String.format("Correct product is %s pass", actual_product_name ): "fail";
+                    System.out.println(result);
+                }
 
-
-
+            }
 
 
         } finally {
