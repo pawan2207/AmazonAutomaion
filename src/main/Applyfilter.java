@@ -5,13 +5,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
 public class Applyfilter {
+    @Test
+  public void Applyfilter(){
 
-    public static void main(String[] args) {
+        //  public static void main(String[] args) {
         // Initialize WebDriver
         System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\msedgedriver.exe");
         WebDriver driver = new EdgeDriver();
@@ -64,4 +67,8 @@ public class Applyfilter {
             driver.quit();
         }
     }
+//}
+
 }
+
+
